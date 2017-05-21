@@ -2,11 +2,16 @@ package com.example.poer_weather;
 
 
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.URL;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.protocol.HTTP;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
@@ -29,7 +34,7 @@ public class MainActivity extends Activity {
 	private String high1;
    private String str;
    private HttpURLConnection urlConnection = null;
-    private static String URL= "http://weather.51wnl.com/weatherinfo/GetMoreWeather?cityCode=101230601&weatherType=0";
+    private static String api= "http://weather.51wnl.com/weatherinfo/GetMoreWeather?cityCode=101230601&weatherType=0";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -41,10 +46,17 @@ public class MainActivity extends Activity {
 		Thread t= new Thread(){
 			public void run(){
 				try{
-					HttpGet request=new HttpGet(URL);
-					HttpResponse response=new DefaultHttpClient().execute(request);
-					if(response.getStatusLine().getStatusCode()==200){
-						str=EntityUtils.toString(response.getEntity());
+					URL url = new URL(api);
+					HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+				    if(conn.getResponseCode()==HttpURLConnection.HTTP_OK){
+				    	InputStream in = conn.getInputStream();
+				    	BufferedReader reader = new BufferedReader(new InputStreamReader(in, HTTP.UTF_8));
+				        String line = null;
+				        while ((line = reader.readLine()) != null) {
+				         if(str==null){
+				          str=line;
+				         }
+				        }
 						Log.i("msg",str);
 						JSONObject jsonObject=new JSONObject(str);
 						JSONObject weatherinfo=jsonObject.getJSONObject("weatherinfo");
