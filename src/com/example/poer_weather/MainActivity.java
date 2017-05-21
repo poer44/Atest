@@ -1,5 +1,8 @@
+/*
+ * 2017-5-21 20:45
+ * update2
+ */
 package com.example.poer_weather;
-
 
 
 import java.io.BufferedReader;
@@ -8,11 +11,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.protocol.HTTP;
-import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 
 import android.app.Activity;
@@ -33,7 +32,6 @@ public class MainActivity extends Activity {
 	private String weather1;
 	private String high1;
    private String str;
-   private HttpURLConnection urlConnection = null;
     private static String api= "http://weather.51wnl.com/weatherinfo/GetMoreWeather?cityCode=101230601&weatherType=0";
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
