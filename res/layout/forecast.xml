@@ -10,65 +10,49 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.poer_weather.MainActivity" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="当前城市：" 
-        android:textSize="20sp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10" />
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onclick"
+            android:text="获取天气" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/city"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"/>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="更新日期："
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"/>
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="当前天气："
-        android:textSize="20sp" />
+        android:textSize="30sp"/>
 
     <TextView
         android:id="@+id/weather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"/>
+        android:textSize="50sp"/>
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="实时温度："
-        android:textSize="20sp" />
-
-    <TextView
+        <TextView
         android:id="@+id/high"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp" />
-
-
-     <Button
-         android:id="@+id/btn"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="点击获取天气"
-         android:layout_gravity="center"
-         android:onClick="onclick" />
+        android:textSize="30sp" />
+        
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"/>
 
 </LinearLayout>
