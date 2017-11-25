@@ -7,3 +7,5 @@
 一个简单App的开发流程初探（xml布局等）和JSON数据的解析（天气数据来自和风天气api）
 ## Github ##
 Pull/push测试。第一次上传GitHub项目！
+## apk运行截图 ##
+ ![image](<https://github.com/poer44/WeatherApk-FirstGit/blob/master/1.jpg?raw=true>)
